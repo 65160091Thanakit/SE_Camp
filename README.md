@@ -1,2 +1,2 @@
 # SE_Camp
-HAHA poopie head
+Nice C*** 
