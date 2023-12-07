@@ -15,10 +15,16 @@ tr{
 .box{
     width:400px;
     height: 400px;
-    color: aqua;
+    color: rgb(0, 0, 0);
     background-color: blue;
     text-align: center;
-    border: 5px dashed red;
+    border: 5px dashed rgb(255, 0, 0);
     padding: 5px;
 }
+.box:hover{
+    color: aqua;
+    background-color: red;
+    border: 5px dashed rgb(0, 255, 38);
 
+    box-shadow: 25px 35px 20px black;   
+}
