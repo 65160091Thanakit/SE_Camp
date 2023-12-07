@@ -1,0 +1,24 @@
+
+
+
+
+tr{
+    font-family: 'Cormorant Garamond', serif;
+
+}
+.myfont{
+    font-family: 'Cormorant Garamond', serif;
+}
+.cored{
+    color: magenta;
+}
+.box{
+    width:400px;
+    height: 400px;
+    color: aqua;
+    background-color: blue;
+    text-align: center;
+    border: 5px dashed red;
+    padding: 5px;
+}
+
