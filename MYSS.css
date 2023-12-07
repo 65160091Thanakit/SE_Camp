@@ -28,3 +28,10 @@ tr{
 
     box-shadow: 25px 35px 20px black;   
 }
+.BG_CHANGE{
+    background-image: url("https://media.discordapp.net/attachments/495184399290204160/1182341830717743277/FB_IMG_1701333275380.jpg?ex=658458a3&is=6571e3a3&hm=0e97ce43b3cc86ebb6df32a94cbe95f1351a1b7179f6454ee0fff537aa421780&=&format=webp&width=463&height=401");
+          height: 100%;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
