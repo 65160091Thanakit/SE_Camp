@@ -1,43 +1,56 @@
+
 <html>
 
-<body>
-    <h1>This is PHP<?= 'HELLO ';?></h1>
-    <div>
-        <p>1</p>
-        <?php
-        #this is comment in PHP naja
+<head>
+    <meta charset="utf-8">
+</head>
+<body >
+    
+    <p>
 
-        #
+    <?php 
+    $multi_x = 2;
+    echo "<h1>ตารางสูตรคูณแม่  $multi_x </h1>";?>
+        <div>
+        <?php 
+    
+    
+    $i = 1;
+   
+    while ($i <= 24) {
+      echo "$multi_x X $i =";
+      echo  $i*$multi_x;
+      echo "<br>";
+      $i++;
+    }
+    
+    ?>
+        </div>
+    
+     </p>
+     <style>
+        h1{
+            margin-top: 0px;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+        }
+        div{
+  font-family: sans-serif;
+  background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
 
-        //
 
-        /*
-        */
-        $var_A=1;
-        $var_B="1";
-        echo "<h1>Sub Bro</h1>";
-        echo $var_A+"3";
-        $array = array();
-        $array[]=5;
-        $array[0]=1;
-        print_r($array);
+  background-color: coral;
+  width: 200px;
+  height: 400px;
+  border: 1px solid black;
+  overflow-x: hidden;
+  overflow-y: scroll;
+        }
+     </style>
 
-
-        ?>
-        <p>2</p>
-        <?php
-
-
-        ?>
-
-        <p>3</p>
-        <?php
-
-
-        ?>
-        
-    </div>
 </body>
-
 
 </html>
