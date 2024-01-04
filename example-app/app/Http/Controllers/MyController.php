@@ -11,7 +11,7 @@ class MyController extends Controller
 
     }
     public function index(){
-        echo $this->myvar;
+        return view('home');
        
 
     }
