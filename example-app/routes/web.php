@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\MyController;
 Route::get('/my-controller',[MyController::class, 'index']);
+Route::get('/my-controller/Form',[MyController::class, 'Form_For_ReDirec']);
+
 Route::get('/my-controller2','App\Http\Controllers\MyController@index');
 Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('my-controller3', 'MyController@index');
 });
+Route::resource('/my-controller4',MyController::class);
 
 Route::get('/', function () {
     return view('welcome');
