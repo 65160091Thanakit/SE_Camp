@@ -12,8 +12,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\MyController;
+use App\Http\Controllers\C_titles;
+
+Route::resource('titles', C_titles::class);
+
 Route::get('/my-controller',[MyController::class, 'index']);
 Route::get('/my-controller/Form',[MyController::class, 'Form_For_ReDirec']);
 
