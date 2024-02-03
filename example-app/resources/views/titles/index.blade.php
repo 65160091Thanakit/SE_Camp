@@ -3,6 +3,16 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
+<?php
+// Check if the page has already been refreshed
+if (!isset($_COOKIE['page_refreshed'])) {
+    // Set a cookie to mark that the page has been refreshed
+    setcookie('page_refreshed', '1', time() + 60); // Expires in 60 seconds
+
+    // Refresh the page after 1 second
+    echo '<meta http-equiv="refresh" content="1">';
+}
+?>
 <html lang="en">
 
 <head>
@@ -25,6 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 
 <body class="hold-transition sidebar-mini">
+    
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -236,6 +247,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </li>
                             </ul>
                         </li>
+                       
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -245,6 +257,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </p>
                             </a>
                         </li>
+                        
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -254,22 +267,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-           <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">SE CAMP</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Titles</a></li>
-                    </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+          
  
      <!-- Content Header (Page header) -->
      <div class="content-header">
@@ -277,6 +275,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0">SE CAMP</h1>
+                    <td>
+                        <button onclick="location.href='/logout'" type="button" class="btn btn-block btn-warning btn-lg">logout</button>
+                      </td>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -326,7 +327,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-success">บันทึก</button>
+                                
                             </div>
+                            
                         </form>
                     </div>
                     <!-- /.card -->
