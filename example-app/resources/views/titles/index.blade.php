@@ -257,7 +257,16 @@ if (!isset($_COOKIE['page_refreshed'])) {
                                 </p>
                             </a>
                         </li>
-                        
+
+
+                        <li class="nav-item">
+                            <a href="/logout" class="nav-link">
+                                    <p>
+                                    logout
+                                </p>
+                            </a>
+                        </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
