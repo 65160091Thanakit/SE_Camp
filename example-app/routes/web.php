@@ -42,6 +42,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/HWmultitable', function () {
+    return view('HW_multi_table');
+});
+
 Route::get('/myD', function () {
     return view('FolderExam.FileinFolder');
 });
