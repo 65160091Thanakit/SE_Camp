@@ -27,6 +27,8 @@ if (!isset($_COOKIE['page_refreshed'])) {
     <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
       .radio {
 
@@ -276,8 +278,33 @@ if (!isset($_COOKIE['page_refreshed'])) {
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-          
- 
+
+
+
+            <script>       
+function deleteme(id) {            
+    Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+        $('.#form_delete_' + id).submit();                   
+
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+    });
+  }
+});    
+}
+            </script>
+
      <!-- Content Header (Page header) -->
      <div class="content-header">
         <div class="container-fluid">
@@ -373,10 +400,12 @@ if (!isset($_COOKIE['page_refreshed'])) {
                                         <td>
                                             <a href="{{ url('/titles/' . $title->tit_id) }}"
                                                 class="btn btn-warning">แก้ไข</a>
-                                            <form method="post" action="/titles/{{ $title->tit_id }}">
+                                            <button type="button" class="btn btn-danger" 
+                                                onclick="deleteme({{$title->tit_id}})">ลบ</button>
+                                            <form id="form_delete_{{$title->tit_id}}" method="post" 
+                                                action="/titles/{{ $title->tit_id }}">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">ลบ</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -426,6 +455,11 @@ if (!isset($_COOKIE['page_refreshed'])) {
     <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url('assets\plugins\bootstrap\js\bootstrap.bundle.min.js') }}">
+     
+
+    @yield('js')
 
 
 
